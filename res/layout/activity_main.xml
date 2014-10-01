@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-          android:id="@+id/map"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:name="com.google.android.gms.maps.MapFragment"/>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="112dp"
+        android:layout_y="164dp"
+        android:text="@string/stop" />
+
+    <Button
+        android:id="@+id/showMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="94dp"
+        android:layout_y="314dp"
+        android:text="@string/showMap" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="96dp"
+        android:layout_y="30dp"
+        android:text="@string/start" />
+
+</AbsoluteLayout>

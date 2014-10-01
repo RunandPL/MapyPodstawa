@@ -249,6 +249,14 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int maskedWalletDetailsTextAppearance=0x7f010019;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarButtonStyle=0x7f010021;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarStyle=0x7f010020;
         /**  Theme to be used for the Wallet selector 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -327,6 +335,7 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010010;
     }
     public static final class color {
+        public static final int black_overlay=0x7f050017;
         public static final int common_action_bar_splitter=0x7f050009;
         /**  Sign-in Button Colors 
          */
@@ -339,8 +348,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f050006;
         public static final int common_signin_btn_light_text_focused=0x7f050007;
         public static final int common_signin_btn_light_text_pressed=0x7f050005;
-        public static final int common_signin_btn_text_dark=0x7f050017;
-        public static final int common_signin_btn_text_light=0x7f050018;
+        public static final int common_signin_btn_text_dark=0x7f050018;
+        public static final int common_signin_btn_text_light=0x7f050019;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f05000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
@@ -359,8 +368,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f050011;
         public static final int wallet_holo_blue_light=0x7f050015;
         public static final int wallet_link_text_light=0x7f050016;
-        public static final int wallet_primary_text_holo_light=0x7f050019;
-        public static final int wallet_secondary_text_holo_dark=0x7f05001a;
+        public static final int wallet_primary_text_holo_light=0x7f05001a;
+        public static final int wallet_secondary_text_holo_dark=0x7f05001b;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -407,7 +416,7 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f02001e;
     }
     public static final class id {
-        public static final int action_settings=0x7f070015;
+        public static final int action_settings=0x7f070018;
         public static final int book_now=0x7f070010;
         public static final int buyButton=0x7f07000a;
         public static final int buy_now=0x7f07000f;
@@ -417,7 +426,7 @@ containing a value of this type.
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
-        public static final int map=0x7f070014;
+        public static final int map=0x7f070017;
         public static final int match_parent=0x7f07000c;
         public static final int monochrome=0x7f070013;
         public static final int none=0x7f070000;
@@ -426,6 +435,9 @@ containing a value of this type.
         public static final int sandbox=0x7f070008;
         public static final int satellite=0x7f070002;
         public static final int selectionDetails=0x7f07000b;
+        public static final int showMapButton=0x7f070015;
+        public static final int startButton=0x7f070016;
+        public static final int stopButton=0x7f070014;
         public static final int strict_sandbox=0x7f070009;
         public static final int terrain=0x7f070003;
         public static final int wrap_content=0x7f07000d;
@@ -435,9 +447,11 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_map_look=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
+        public static final int map_look=0x7f0a0001;
     }
     public static final class string {
         public static final int action_settings=0x7f06001c;
@@ -532,6 +546,10 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060018;
         public static final int hello_world=0x7f06001b;
+        public static final int showMap=0x7f060020;
+        public static final int start=0x7f06001e;
+        public static final int stop=0x7f06001f;
+        public static final int title_activity_map_look=0x7f06001d;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
@@ -541,15 +559,18 @@ containing a value of this type.
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
+
     
  API 11 theme customizations can go here. 
 
@@ -564,6 +585,10 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f040006;
+        public static final int ButtonBar=0x7f040008;
+        public static final int ButtonBarButton=0x7f040009;
+        public static final int FullscreenActionBarStyle=0x7f04000a;
+        public static final int FullscreenTheme=0x7f040007;
         public static final int Theme_IAPTheme=0x7f040000;
         public static final int WalletFragmentDefaultButtonTextAppearance=0x7f040003;
         public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f040002;
@@ -651,6 +676,46 @@ containing a value of this type.
           @attr name com.example.maps:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarButtonStyle com.example.maps:metaButtonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarStyle com.example.maps:metaButtonBarStyle}</code></td><td></td></tr>
+           </table>
+           @see #ButtonBarContainerTheme_metaButtonBarButtonStyle
+           @see #ButtonBarContainerTheme_metaButtonBarStyle
+         */
+        public static final int[] ButtonBarContainerTheme = {
+            0x7f010020, 0x7f010021
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.maps.R.attr#metaButtonBarButtonStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.example.maps:metaButtonBarButtonStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarButtonStyle = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.maps.R.attr#metaButtonBarStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.example.maps:metaButtonBarStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
         /** Attributes that can be used with a MapAttrs.
            <p>Includes the following attributes:</p>
            <table>
