@@ -4,27 +4,35 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="112dp"
-        android:layout_y="164dp"
-        android:text="@string/stop" />
-
-    <Button
-        android:id="@+id/showMapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="94dp"
-        android:layout_y="314dp"
-        android:text="@string/showMap" />
-
-    <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="96dp"
         android:layout_y="30dp"
         android:text="@string/start" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="109dp"
+        android:layout_y="100dp"
+        android:text="@string/stop" />
+
+    <Button
+        android:id="@+id/showMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="92dp"
+        android:layout_y="158dp"
+        android:text="@string/showMap" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="121dp"
+        android:layout_y="228dp"
+        android:text="@string/save" />
 
 </AbsoluteLayout>

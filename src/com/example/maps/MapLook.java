@@ -60,12 +60,12 @@ public class MapLook extends Activity {
 	}
 	
 	private void readPositions(double[] positionsAsDouble) {
-		if(positionsAsDouble == null) {
-			Toast.makeText(this, "Pozycje to null", Toast.LENGTH_SHORT).show();
+		positionList = new ArrayList<LatLng>();
+		if(positionsAsDouble == null || positionsAsDouble.length == 0) {
+			Toast.makeText(this, "Pozycje s¹ puste", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		int length = positionsAsDouble.length;
-		positionList = new ArrayList<LatLng>();
 		for(int i = 0; i < (length - 1); i+=2) {
 			double lat = positionsAsDouble[i];
 			double ltg = positionsAsDouble[i + 1];
@@ -77,7 +77,7 @@ public class MapLook extends Activity {
 	}
 	
 	private void putTrackOnMap() {
-    	if(map != null) {
+    	if(map != null && !positionList.isEmpty()) {
     		PolylineOptions polylineOptions = new PolylineOptions();
     		polylineOptions.add(positionList.toArray(new LatLng[positionList.size()]));
     		polylineOptions.color(Color.GREEN);

@@ -30,6 +30,7 @@ public class GpsService extends Service {
 	private LocationManager locationManager = null;
 	private boolean startTracking = false;
 	private Location currentBestLocation = null;
+	private LocationListener locationListener = null;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -41,6 +42,7 @@ public class GpsService extends Service {
 		//Send tracked positions back to main activity
 		sendTrackPositions();
 		Toast.makeText(this, "Service Stopped", Toast.LENGTH_SHORT).show();
+		locationManager.removeUpdates(locationListener);
 	}
 	
 	@Override
@@ -51,7 +53,7 @@ public class GpsService extends Service {
         Location location = locationManager.getLastKnownLocation(LOCATION_PROVIDER);
         if(location != null)
         	currentBestLocation = location;
-        LocationListener locationListener = new LocationListener() {
+        locationListener = new LocationListener() {
 			
 			@Override
 			public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -74,8 +76,9 @@ public class GpsService extends Service {
 			@Override
 			public void onLocationChanged(Location location) {
 				if(location.getAccuracy() < SUFFICIENT_ACCURACY) {
+					if(!startTracking)
+						sendData("Rozpoczêcie Namierzania");
 					startTracking = true;
-					sendData("Rozpoczêcie Namierzania");
 				}
 				if(startTracking) {
 					updatePositionsList(location);
@@ -101,13 +104,15 @@ public class GpsService extends Service {
 	}
 	
 	private double[] getPositionsAsDouble() {
-		double[] positionsTable = new double[positionList.size()];
+		double[] positionsTable = new double[positionList.size() * 2];
 		for(int i = 0; i < positionList.size(); i++) {
 			positionsTable[2 * i] = positionList.get(i).latitude;
 			positionsTable[2 * i + 1] = positionList.get(i).longitude;
 			
 		}
-		return positionsTable;
+		//return positionsTable;
+		double[] tmp = new double[]{12,45,56,21,34,56,12,78,90,78};
+		return tmp;
 	}
 	
 	

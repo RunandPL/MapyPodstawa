@@ -1,29 +1,10 @@
 package com.example.maps;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.android.gms.internal.in;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
-
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Color;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,10 +20,12 @@ public class MainActivity extends Activity {
 	private Button startButton;
 	private Button stopButton;
 	private Button showMapButton;
+	private Button saveButton;
 	private boolean endOfTraining = false;
 	private boolean serviceStarted = false;
 	private MyReciver myReciver;
 	private boolean positionsOK = false;
+	private FileManager routeToFileSaver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
@@ -51,6 +34,8 @@ public class MainActivity extends Activity {
         startButton = (Button) findViewById(R.id.startButton);
         stopButton = (Button) findViewById(R.id.stopButton);
         showMapButton = (Button) findViewById(R.id.showMapButton);
+        saveButton = (Button) findViewById(R.id.saveButton);
+        Toast.makeText(this, getExternalFilesDir(null).getAbsolutePath(), Toast.LENGTH_SHORT).show();
         
         startButton.setOnClickListener(new OnClickListener() {
 			
@@ -74,6 +59,7 @@ public class MainActivity extends Activity {
 		});
         
         showMapButton.setOnClickListener(new OnClickListener() {
+
 			
 			@Override
 			public void onClick(View v) {
@@ -84,6 +70,31 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
+        
+        saveButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(endOfTraining && positionsOK) {
+					routeToFileSaver.saveRoute(trackedPositionsAsDouble);
+				}
+			}
+		});
+        routeToFileSaver = new FileManager(getExternalFilesDir(null), getBaseContext());
+    }
+    
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+    	savedInstanceState.putBoolean("SERVICE_STARTED", serviceStarted);
+    	savedInstanceState.putBoolean("END_OF_TRAINING", endOfTraining);
+    	savedInstanceState.putBoolean("POSITIONS_OK", positionsOK);
+    }
+    
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    	serviceStarted = savedInstanceState.getBoolean("SERVICE_STARTED");
+    	endOfTraining = savedInstanceState.getBoolean("END_OF_TRAINING");
+    	positionsOK = savedInstanceState.getBoolean("POSITIONS_OK");
     }
     
     @Override
